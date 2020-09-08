@@ -57,6 +57,8 @@ K_E = 26
 K_F = 41
 K_G = 42
 K_H = 43
+K_L = 46
+K_R = 44
 
 #How much the pointer will run in each iteration - change it as your will
 POINTER_STEP = 8
@@ -279,21 +281,21 @@ class Controller:
 				#L-Trigger
 				if received_string[LTRIGGER_INDEX] == '1':
 					if self.keystates[LTRIGGER_INDEX] == '0':
-						self.press_button(K_E)
+						self.press_button(K_L)
 						self.keystates[LTRIGGER_INDEX] = '1'
 				else:
 					if self.keystates[LTRIGGER_INDEX] == '1':
-						self.release_button(K_E)
+						self.release_button(K_L)
 						self.keystates[LTRIGGER_INDEX] = '0'
 	
 				#R-Trigger (if protocol = 2, use as right mouse button)
 				if received_string[RTRIGGER_INDEX] == '1':
 					if self.keystates[RTRIGGER_INDEX] == '0':
-						self.press_button(K_F)
+						self.press_button(K_R)
 						self.keystates[RTRIGGER_INDEX] = '1'
 				else:
 					if self.keystates[RTRIGGER_INDEX] == '1':
-						self.release_button(K_F)
+						self.release_button(K_R)
 						self.keystates[RTRIGGER_INDEX] = '0'
 
 				#Select - Simulate backspace when protocol = 1
